@@ -1,6 +1,6 @@
 ---
 name: figma-component-delivery
-description: Use when any agent is asked to implement, refine, or verify Figma-driven UI components for app development. Enforces a Figma-first evidence workflow: read repo workflow docs and active task docs, inspect exact Figma node chains, classify all targets before coding, preserve component hierarchy, avoid design guessing, and finish with build plus visual verification.
+description: "Use when any agent is asked to implement, refine, or verify Figma-driven UI components for app development. Enforces a Figma-first evidence workflow: read repo workflow docs and active task docs, inspect exact Figma node chains, classify all targets before coding, preserve component hierarchy, avoid design guessing, and finish with build plus visual verification."
 ---
 
 # Figma Component Delivery
@@ -11,8 +11,8 @@ Use this skill for component-focused UI work when Figma is the design source of 
 
 Before any code changes:
 
-- read the repo workflow doc if one exists, such as `HERMES_WORKFLOW.md`
-- read the active task doc if one exists, such as `HERMES_TASK_*.md`
+- read the repo workflow doc if one exists, such as `AGENT_WORKFLOW.md`
+- read the active task doc if one exists, such as `AGENT_TASK_*.md`
 
 Those files define repo-specific guardrails. This skill operationalizes them and fills the gap when the repo does not already enforce a strict design-delivery process.
 
