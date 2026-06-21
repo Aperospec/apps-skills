@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/design-fidelity/baseline_manifest.schema.json",
+  "title": "Visual Baseline Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "manifest_id",
+    "generated_at",
+    "baseline_type",
+    "scope_type",
+    "entries"
+  ],
+  "properties": {
+    "manifest_id": { "type": "string", "minLength": 1 },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "baseline_type": {
+      "type": "string",
+      "enum": ["candidate", "accepted"]
+    },
+    "scope_type": {
+      "type": "string",
+      "enum": ["component", "screen", "batch"]
+    },
+    "accepted_at": { "type": ["string", "null"], "format": "date-time" },
+    "acceptance_ref": { "type": ["string", "null"] },
+    "entries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "type",
+          "reference_screenshot",
+          "runtime_screenshot",
+          "report_ref"
+        ],
+        "properties": {
+          "name": { "type": "string", "minLength": 1 },
+          "type": { "type": "string", "enum": ["component", "screen"] },
+          "reference_screenshot": { "type": "string", "minLength": 1 },
+          "runtime_screenshot": { "type": "string", "minLength": 1 },
+          "diff_image": { "type": ["string", "null"] },
+          "report_ref": { "type": "string", "minLength": 1 },
+          "content_hash": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "notes": { "type": "string" }
+  }
+}
+

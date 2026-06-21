@@ -1,0 +1,11 @@
+{
+  "report_id": "example-screen-001",
+  "screen_name": "ExampleScreen",
+  "figma_reference": "references/screens/example.png",
+  "runtime_screenshot": "runtime/screens/example.png",
+  "generated_at": "2026-06-21T00:00:00Z",
+  "status": "passed",
+  "issues": [],
+  "notes": "Fictional example of a completed report."
+}
+

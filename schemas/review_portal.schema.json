@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/design-fidelity/review_portal.schema.json",
+  "title": "Visual Review Portal Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["portal_id", "generated_at", "portal_type", "entries"],
+  "properties": {
+    "portal_id": { "type": "string", "minLength": 1 },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "portal_type": {
+      "type": "string",
+      "enum": ["component", "screen", "combined"]
+    },
+    "title": { "type": "string" },
+    "entries": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/entry" }
+    }
+  },
+  "$defs": {
+    "entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "type",
+        "figma_reference_screenshot",
+        "runtime_screenshot",
+        "diff_image",
+        "status",
+        "agent_conclusion",
+        "issue_summary",
+        "report_ref",
+        "registry_ref",
+        "traceback_refs",
+        "requires_human_review"
+      ],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "figma_name": { "type": ["string", "null"] },
+        "type": { "type": "string", "enum": ["component", "screen"] },
+        "figma_reference_screenshot": { "type": "string", "minLength": 1 },
+        "runtime_screenshot": { "type": "string", "minLength": 1 },
+        "diff_image": { "type": ["string", "null"] },
+        "status": {
+          "type": "string",
+          "enum": [
+            "ready_for_use",
+            "needs_fix",
+            "requires_human_review",
+            "blocked",
+            "deprecated",
+            "passed",
+            "failed"
+          ]
+        },
+        "agent_conclusion": { "type": "string", "minLength": 1 },
+        "issue_summary": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "report_ref": { "type": "string", "minLength": 1 },
+        "registry_ref": { "type": "string", "minLength": 1 },
+        "traceback_refs": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "requires_human_review": { "type": "boolean" },
+        "human_review_reason": { "type": ["string", "null"] }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,21 @@
+{
+  "manifest_id": "example-component-candidate-baseline",
+  "generated_at": "2026-06-21T00:00:00Z",
+  "baseline_type": "candidate",
+  "scope_type": "component",
+  "accepted_at": null,
+  "acceptance_ref": null,
+  "entries": [
+    {
+      "name": "Button/Primary/Large",
+      "type": "component",
+      "reference_screenshot": "references/components/button-primary-large.png",
+      "runtime_screenshot": "runtime/components/button-primary-large.png",
+      "diff_image": "reports/components/button-primary-large.diff.png",
+      "report_ref": "reports/components/button-primary-large.json",
+      "content_hash": null
+    }
+  ],
+  "notes": "Candidate Baselines are generated automatically and do not require per-component user approval."
+}
+

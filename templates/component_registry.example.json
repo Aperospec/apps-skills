@@ -1,0 +1,60 @@
+{
+  "registry_version": "1.0.0",
+  "components": [
+    {
+      "figma_component_name": "Button/Primary/Large",
+      "figma_node_id": "100:200",
+      "ios_component": "PrimaryButton",
+      "ios_import_path": "TARGET_PROJECT/DesignSystem/Controls/PrimaryButton",
+      "props": {
+        "size": "large",
+        "style": "primary",
+        "state": "default"
+      },
+      "allowed_props": ["title", "state", "isLoading", "action"],
+      "required_tokens": [
+        "color.action.primary",
+        "color.text.onAction",
+        "radius.control.large",
+        "type.label.large"
+      ],
+      "forbidden_implementations": [
+        "Do not recreate this button with screen-local shapes or hardcoded colors.",
+        "Do not override internal padding from a screen."
+      ],
+      "usage_rule": "Use for matching Figma instances after selecting the correct state.",
+      "status": "ready_for_use",
+      "agent_review_status": "passed",
+      "human_review_status": "not_requested",
+      "component_diff_report_path": "reports/components/button-primary-large.json",
+      "traceback_refs": [
+        "token_mapping.json#/tokens/0",
+        "component_diff_report.json#/issues"
+      ],
+      "candidate_baseline": "baselines/components/button-primary-large.candidate.json",
+      "accepted_baseline": null,
+      "notes": "Fictional example; replace with the target project's real component."
+    },
+    {
+      "figma_component_name": "Card/Task/Default",
+      "figma_node_id": "100:300",
+      "ios_component": "",
+      "ios_import_path": "",
+      "props": {},
+      "allowed_props": [],
+      "required_tokens": ["color.surface.card", "radius.card.default"],
+      "forbidden_implementations": [
+        "Do not handwrite an approximate card inside a screen."
+      ],
+      "usage_rule": "Exclude this instance from normal screen assembly until the Agent resolves the mapping or requests exception review.",
+      "status": "requires_human_review",
+      "agent_review_status": "requires_human_review",
+      "human_review_status": "pending",
+      "component_diff_report_path": null,
+      "traceback_refs": ["exceptions/unmapped-component-card-task-default"],
+      "candidate_baseline": null,
+      "accepted_baseline": null,
+      "notes": "Fictional unresolved mapping."
+    }
+  ]
+}

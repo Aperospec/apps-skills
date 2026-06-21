@@ -1,0 +1,30 @@
+{
+  "registry_version": "1.0.0",
+  "screens": [
+    {
+      "screen_name": "ExampleTaskScreen",
+      "figma_frame_name": "Example/Task",
+      "figma_frame_node_id": "200:100",
+      "ios_screen_name": "ExampleTaskScreen",
+      "ios_entry_point": "TARGET_PROJECT/Features/ExampleTaskScreen",
+      "reference_screenshot_path": "references/screens/example-task.png",
+      "runtime_screenshot_path": "runtime/screens/example-task.png",
+      "device": "SIMULATOR_NAME",
+      "os_version": "MATCH_REFERENCE",
+      "color_scheme": "light",
+      "locale": "en-US",
+      "regions": [
+        {
+          "region_name": "primary_action",
+          "figma_node_id": "200:120",
+          "ios_accessibility_id": "example.primaryAction",
+          "expected_component": "Button/Primary/Large",
+          "must_match": ["component", "variant", "state", "size", "spacing", "tokens"],
+          "tolerance": "Record only unavoidable 1-2px renderer differences.",
+          "review_required": true
+        }
+      ]
+    }
+  ]
+}
+

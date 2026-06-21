@@ -1,0 +1,56 @@
+{
+  "report_id": "screen-example-task-001",
+  "screen_name": "ExampleTaskScreen",
+  "figma_reference": "references/screens/example-task.png",
+  "runtime_screenshot": "runtime/screens/example-task.png",
+  "generated_at": "2026-06-21T00:00:00Z",
+  "status": "failed",
+  "issues": [
+    {
+      "issue_id": "screen-issue-001",
+      "region_name": "primary_action",
+      "severity": "high",
+      "diff_type": "component_mismatch",
+      "figma_expected": "Button/Primary/Large in the default state.",
+      "runtime_actual": "A screen-local approximate button is rendered.",
+      "likely_cause": "The ready_for_use component was bypassed.",
+      "required_fix": "Replace the local implementation with PrimaryButton. Do not patch its internal styling from the screen.",
+      "suggested_component": "PrimaryButton",
+      "suggested_token": null,
+      "auto_fixable": true,
+      "traceback_layer": "screen_assembly",
+      "requires_human_review": false
+    },
+    {
+      "issue_id": "screen-issue-002",
+      "region_name": "content_stack",
+      "severity": "medium",
+      "diff_type": "spacing_mismatch",
+      "figma_expected": "Vertical gap uses spacing.stack.medium.",
+      "runtime_actual": "The runtime gap is 4 px larger.",
+      "likely_cause": "Incorrect stack token.",
+      "required_fix": "Use spacing.stack.medium at the screen assembly boundary.",
+      "suggested_component": null,
+      "suggested_token": "spacing.stack.medium",
+      "auto_fixable": true,
+      "traceback_layer": "screen_assembly",
+      "requires_human_review": false
+    },
+    {
+      "issue_id": "screen-issue-003",
+      "region_name": "surface",
+      "severity": "medium",
+      "diff_type": "color_mismatch",
+      "figma_expected": "Background uses color.surface.primary.",
+      "runtime_actual": "Background uses a hardcoded near-white value.",
+      "likely_cause": "Design token bypass.",
+      "required_fix": "Replace the hardcoded color with color.surface.primary.",
+      "suggested_component": null,
+      "suggested_token": "color.surface.primary",
+      "auto_fixable": true,
+      "traceback_layer": "design_token",
+      "requires_human_review": false
+    }
+  ],
+  "notes": "Fictional example; replace all values."
+}

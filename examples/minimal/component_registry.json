@@ -1,0 +1,28 @@
+{
+  "registry_version": "1.0.0",
+  "components": [
+    {
+      "figma_component_name": "Button/Example/Primary",
+      "figma_node_id": "10:20",
+      "ios_component": "ExamplePrimaryButton",
+      "ios_import_path": "TARGET_PROJECT/DesignSystem/ExamplePrimaryButton",
+      "props": {
+        "state": "default"
+      },
+      "allowed_props": ["title", "state", "action"],
+      "required_tokens": ["color.example.action", "radius.example.control"],
+      "forbidden_implementations": [
+        "Do not recreate the component inside a screen."
+      ],
+      "usage_rule": "Use only for matching fictional Figma instances.",
+      "status": "ready_for_use",
+      "agent_review_status": "passed",
+      "human_review_status": "not_requested",
+      "component_diff_report_path": "reports/components/example-primary-button.json",
+      "traceback_refs": ["token_mapping.json#/tokens/0"],
+      "candidate_baseline": "baselines/components/example-primary-button.candidate.json",
+      "accepted_baseline": null,
+      "notes": "Fictional example."
+    }
+  ]
+}

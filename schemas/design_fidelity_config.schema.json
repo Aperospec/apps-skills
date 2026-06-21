@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/design-fidelity/design_fidelity_config.schema.json",
+  "title": "Design Fidelity Configuration",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "project_name",
+    "platform",
+    "figma_file_key",
+    "figma_page_name",
+    "default_device",
+    "default_color_scheme",
+    "default_locale",
+    "token_mapping_path",
+    "component_inventory_path",
+    "component_registry_path",
+    "screen_registry_path",
+    "baseline_manifest_path",
+    "review_portal_dir",
+    "component_reports_dir",
+    "reports_dir",
+    "references_dir",
+    "runtime_dir",
+    "screenshot_capture_method",
+    "notes"
+  ],
+  "properties": {
+    "project_name": { "type": "string", "minLength": 1 },
+    "platform": { "const": "iOS" },
+    "figma_file_key": { "type": "string", "minLength": 1 },
+    "figma_page_name": { "type": "string", "minLength": 1 },
+    "default_device": { "type": "string", "minLength": 1 },
+    "default_color_scheme": {
+      "type": "string",
+      "enum": ["light", "dark"]
+    },
+    "default_locale": { "type": "string", "minLength": 1 },
+    "token_mapping_path": { "type": "string", "minLength": 1 },
+    "component_inventory_path": { "type": "string", "minLength": 1 },
+    "component_registry_path": { "type": "string", "minLength": 1 },
+    "screen_registry_path": { "type": "string", "minLength": 1 },
+    "baseline_manifest_path": { "type": "string", "minLength": 1 },
+    "review_portal_dir": { "type": "string", "minLength": 1 },
+    "component_reports_dir": { "type": "string", "minLength": 1 },
+    "reports_dir": { "type": "string", "minLength": 1 },
+    "references_dir": { "type": "string", "minLength": 1 },
+    "runtime_dir": { "type": "string", "minLength": 1 },
+    "screenshot_capture_method": { "type": "string", "minLength": 1 },
+    "notes": { "type": "string" }
+  }
+}
