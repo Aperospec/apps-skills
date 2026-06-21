@@ -1,0 +1,57 @@
+{
+  "figma_file_key": "REPLACE_WITH_FIGMA_FILE_KEY",
+  "figma_page_name": "Example Design System",
+  "generated_at": "2026-06-21T00:00:00Z",
+  "components": [
+    {
+      "component_name": "Button/Primary/Large",
+      "figma_node_id": "100:200",
+      "component_type": "base_component",
+      "variants": [
+        {
+          "name": "Large",
+          "properties": {
+            "size": "large",
+            "style": "primary"
+          }
+        }
+      ],
+      "states": ["default", "pressed", "disabled", "loading"],
+      "tokens": {
+        "background": "color.action.primary",
+        "foreground": "color.text.onAction",
+        "corner_radius": "radius.control.large",
+        "typography": "type.label.large"
+      },
+      "priority": "critical",
+      "implementation_status": "implemented",
+      "review_status": "passed",
+      "dependencies": [],
+      "notes": "Fictional example. Replace all names and IDs for the target project."
+    },
+    {
+      "component_name": "Card/Task/Default",
+      "figma_node_id": "100:300",
+      "component_type": "card_component",
+      "variants": [
+        {
+          "name": "Default",
+          "properties": {
+            "emphasis": "standard"
+          }
+        }
+      ],
+      "states": ["default", "selected"],
+      "tokens": {
+        "surface": "color.surface.card",
+        "corner_radius": "radius.card.default",
+        "shadow": "shadow.card.default"
+      },
+      "priority": "high",
+      "implementation_status": "in_progress",
+      "review_status": "not_reviewed",
+      "dependencies": ["Button/Primary/Large"],
+      "notes": "The Agent must complete component-level screenshot review before setting ready_for_use."
+    }
+  ]
+}

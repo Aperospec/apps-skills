@@ -1,0 +1,30 @@
+{
+  "portal_id": "example-screen-review",
+  "generated_at": "2026-06-21T00:00:00Z",
+  "portal_type": "screen",
+  "title": "Example Screen Review",
+  "entries": [
+    {
+      "name": "ExampleTaskScreen",
+      "figma_name": "Example/Task",
+      "type": "screen",
+      "figma_reference_screenshot": "references/screens/example-task.png",
+      "runtime_screenshot": "runtime/screens/example-task.png",
+      "diff_image": "reports/screens/example-task.diff.png",
+      "status": "requires_human_review",
+      "agent_conclusion": "The primary component matches; an ambiguous illustration requires visual confirmation.",
+      "issue_summary": [
+        "screen_visual_blocker: illustration crop cannot be determined from available Figma export."
+      ],
+      "report_ref": "reports/screens/example-task.json",
+      "registry_ref": "screen_registry.json#/screens/0",
+      "traceback_refs": [
+        "component_registry.json#/components/0",
+        "exceptions/screen-visual-blocker-example-task"
+      ],
+      "requires_human_review": true,
+      "human_review_reason": "Choose the intended illustration crop."
+    }
+  ]
+}
+

@@ -1,0 +1,29 @@
+{
+  "mapping_version": "1.0.0",
+  "generated_at": "2026-06-21T00:00:00Z",
+  "tokens": [
+    {
+      "figma_token": "Color/Action/Primary",
+      "token_type": "color",
+      "figma_value": "#1268F3",
+      "ios_token": "color.action.primary",
+      "status": "mapped",
+      "traceback_refs": [
+        "component_registry.json#/components/0"
+      ],
+      "notes": "Fictional example. The Agent maintains this mapping internally."
+    },
+    {
+      "figma_token": "Spacing/Control/Inline",
+      "token_type": "spacing",
+      "figma_value": 12,
+      "ios_token": null,
+      "status": "unmapped_token",
+      "traceback_refs": [
+        "exceptions/unmapped-token-spacing-control-inline"
+      ],
+      "notes": "Escalate only because this unresolved mapping blocks fidelity."
+    }
+  ]
+}
+

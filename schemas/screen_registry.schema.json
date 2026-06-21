@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/design-fidelity/screen_registry.schema.json",
+  "title": "Screen Registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["registry_version", "screens"],
+  "properties": {
+    "registry_version": { "type": "string", "minLength": 1 },
+    "screens": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/screen" }
+    }
+  },
+  "$defs": {
+    "screen": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "screen_name",
+        "figma_frame_name",
+        "figma_frame_node_id",
+        "ios_screen_name",
+        "ios_entry_point",
+        "reference_screenshot_path",
+        "runtime_screenshot_path",
+        "device",
+        "color_scheme",
+        "locale",
+        "regions"
+      ],
+      "properties": {
+        "screen_name": { "type": "string", "minLength": 1 },
+        "figma_frame_name": { "type": "string", "minLength": 1 },
+        "figma_frame_node_id": { "type": "string", "minLength": 1 },
+        "ios_screen_name": { "type": "string", "minLength": 1 },
+        "ios_entry_point": { "type": "string", "minLength": 1 },
+        "reference_screenshot_path": { "type": "string", "minLength": 1 },
+        "runtime_screenshot_path": { "type": "string", "minLength": 1 },
+        "device": { "type": "string", "minLength": 1 },
+        "os_version": { "type": "string" },
+        "color_scheme": {
+          "type": "string",
+          "enum": ["light", "dark"]
+        },
+        "locale": { "type": "string", "minLength": 1 },
+        "regions": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/region" }
+        }
+      }
+    },
+    "region": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "region_name",
+        "figma_node_id",
+        "ios_accessibility_id",
+        "expected_component",
+        "must_match",
+        "tolerance",
+        "review_required"
+      ],
+      "properties": {
+        "region_name": { "type": "string", "minLength": 1 },
+        "figma_node_id": { "type": "string", "minLength": 1 },
+        "ios_accessibility_id": { "type": "string", "minLength": 1 },
+        "expected_component": { "type": "string", "minLength": 1 },
+        "must_match": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        },
+        "tolerance": { "type": "string", "minLength": 1 },
+        "review_required": { "type": "boolean" }
+      }
+    }
+  }
+}
+

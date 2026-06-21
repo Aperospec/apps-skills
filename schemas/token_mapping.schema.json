@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/design-fidelity/token_mapping.schema.json",
+  "title": "Figma To iOS Token Mapping",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["mapping_version", "generated_at", "tokens"],
+  "properties": {
+    "mapping_version": { "type": "string", "minLength": 1 },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "tokens": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "figma_token",
+          "token_type",
+          "figma_value",
+          "ios_token",
+          "status",
+          "traceback_refs"
+        ],
+        "properties": {
+          "figma_token": { "type": "string", "minLength": 1 },
+          "token_type": {
+            "type": "string",
+            "enum": [
+              "color",
+              "typography",
+              "spacing",
+              "radius",
+              "shadow",
+              "icon_size",
+              "motion"
+            ]
+          },
+          "figma_value": {},
+          "ios_token": { "type": ["string", "null"] },
+          "status": {
+            "type": "string",
+            "enum": [
+              "mapped",
+              "unmapped_token",
+              "conflicting",
+              "requires_human_review"
+            ]
+          },
+          "traceback_refs": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 }
+          },
+          "notes": { "type": "string" }
+        }
+      }
+    }
+  }
+}
+

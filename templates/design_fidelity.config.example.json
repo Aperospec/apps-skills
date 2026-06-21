@@ -1,0 +1,21 @@
+{
+  "project_name": "Example External iOS Project",
+  "platform": "iOS",
+  "figma_file_key": "REPLACE_WITH_FIGMA_FILE_KEY",
+  "figma_page_name": "Example App",
+  "default_device": "SIMULATOR_NAME",
+  "default_color_scheme": "light",
+  "default_locale": "en-US",
+  "token_mapping_path": "design-fidelity/token_mapping.json",
+  "component_inventory_path": "design-fidelity/component_inventory.json",
+  "component_registry_path": "design-fidelity/component_registry.json",
+  "screen_registry_path": "design-fidelity/screen_registry.json",
+  "baseline_manifest_path": "design-fidelity/baselines/baseline-manifest.json",
+  "review_portal_dir": "design-fidelity/review-portal",
+  "component_reports_dir": "design-fidelity/reports/components",
+  "reports_dir": "design-fidelity/reports/screens",
+  "references_dir": "design-fidelity/references",
+  "runtime_dir": "design-fidelity/runtime",
+  "screenshot_capture_method": "TARGET_PROJECT_SELECTED_METHOD",
+  "notes": "All values are fictional placeholders and must be replaced."
+}

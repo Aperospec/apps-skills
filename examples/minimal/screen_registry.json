@@ -1,0 +1,30 @@
+{
+  "registry_version": "1.0.0",
+  "screens": [
+    {
+      "screen_name": "ExampleScreen",
+      "figma_frame_name": "Example/Screen",
+      "figma_frame_node_id": "20:10",
+      "ios_screen_name": "ExampleScreen",
+      "ios_entry_point": "TARGET_PROJECT/Features/ExampleScreen",
+      "reference_screenshot_path": "references/screens/example.png",
+      "runtime_screenshot_path": "runtime/screens/example.png",
+      "device": "SIMULATOR_NAME",
+      "os_version": "MATCH_REFERENCE",
+      "color_scheme": "light",
+      "locale": "en-US",
+      "regions": [
+        {
+          "region_name": "primary_action",
+          "figma_node_id": "20:20",
+          "ios_accessibility_id": "example.primaryAction",
+          "expected_component": "Button/Example/Primary",
+          "must_match": ["component", "variant", "state", "layout", "tokens"],
+          "tolerance": "Record unavoidable renderer differences.",
+          "review_required": true
+        }
+      ]
+    }
+  ]
+}
+

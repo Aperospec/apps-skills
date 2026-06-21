@@ -1,0 +1,4 @@
+interface:
+  display_name: "Figma iOS Design Fidelity"
+  short_description: "Autonomous Figma-to-iOS visual fidelity workflow"
+  default_prompt: "Use $figma-ios-design-fidelity to autonomously implement, validate, and present this iOS UI through Review Portals."

@@ -1,0 +1,28 @@
+{
+  "report_id": "component-button-primary-large-001",
+  "component_name": "Button/Primary/Large",
+  "figma_node_id": "100:200",
+  "figma_reference": "references/components/button-primary-large-disabled.png",
+  "runtime_screenshot": "runtime/components/button-primary-large-disabled.png",
+  "generated_at": "2026-06-21T00:00:00Z",
+  "status": "failed",
+  "issues": [
+    {
+      "issue_id": "component-issue-001",
+      "variant": "Large",
+      "state": "disabled",
+      "severity": "high",
+      "diff_type": "token_mismatch",
+      "figma_expected": "Disabled background uses color.action.primary.disabled.",
+      "runtime_actual": "Runtime uses a hardcoded 40% opacity on the default color.",
+      "likely_cause": "The disabled token was not mapped.",
+      "required_fix": "Update the shared button component to consume the disabled token, then recapture all disabled variants.",
+      "suggested_token": "color.action.primary.disabled",
+      "auto_fixable": true,
+      "traceback_layer": "design_token",
+      "suggested_traceback_action": "Correct the disabled token mapping and revalidate every dependent button state.",
+      "requires_human_review": false
+    }
+  ],
+  "notes": "Do not patch this difference from a screen."
+}

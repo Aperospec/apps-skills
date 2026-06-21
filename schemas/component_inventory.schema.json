@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/design-fidelity/component_inventory.schema.json",
+  "title": "Figma Component Inventory",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["figma_file_key", "figma_page_name", "generated_at", "components"],
+  "properties": {
+    "figma_file_key": { "type": "string", "minLength": 1 },
+    "figma_page_name": { "type": "string", "minLength": 1 },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "components": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/component" }
+    }
+  },
+  "$defs": {
+    "component": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "component_name",
+        "figma_node_id",
+        "component_type",
+        "variants",
+        "states",
+        "tokens",
+        "priority",
+        "implementation_status",
+        "review_status"
+      ],
+      "properties": {
+        "component_name": { "type": "string", "minLength": 1 },
+        "figma_node_id": { "type": "string", "minLength": 1 },
+        "component_type": {
+          "type": "string",
+          "enum": [
+            "base_component",
+            "composite_component",
+            "navigation_component",
+            "list_item_component",
+            "card_component",
+            "modal_component",
+            "state_component"
+          ]
+        },
+        "variants": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "properties"],
+            "properties": {
+              "name": { "type": "string", "minLength": 1 },
+              "properties": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": ["string", "number", "boolean"]
+                }
+              }
+            }
+          }
+        },
+        "states": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        },
+        "tokens": {
+          "type": "object",
+          "additionalProperties": {
+            "type": ["string", "number", "boolean", "array", "null"],
+            "items": { "type": ["string", "number", "boolean"] }
+          }
+        },
+        "priority": {
+          "type": "string",
+          "enum": ["critical", "high", "medium", "low"]
+        },
+        "implementation_status": {
+          "type": "string",
+          "enum": ["not_started", "in_progress", "implemented", "blocked"]
+        },
+        "review_status": {
+          "type": "string",
+          "enum": ["not_reviewed", "passed", "failed", "requires_human_review"]
+        },
+        "dependencies": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}
+

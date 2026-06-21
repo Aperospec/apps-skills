@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/design-fidelity/component_diff_report.schema.json",
+  "title": "Component Visual Difference Report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "report_id",
+    "component_name",
+    "figma_reference",
+    "runtime_screenshot",
+    "generated_at",
+    "status",
+    "issues"
+  ],
+  "properties": {
+    "report_id": { "type": "string", "minLength": 1 },
+    "component_name": { "type": "string", "minLength": 1 },
+    "figma_node_id": { "type": "string", "minLength": 1 },
+    "figma_reference": { "type": "string", "minLength": 1 },
+    "runtime_screenshot": { "type": "string", "minLength": 1 },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "status": {
+      "type": "string",
+      "enum": ["passed", "failed", "requires_human_review"]
+    },
+    "issues": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/issue" }
+    },
+    "notes": { "type": "string" }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "status": { "const": "passed" } },
+        "required": ["status"]
+      },
+      "then": { "properties": { "issues": { "maxItems": 0 } } }
+    }
+  ],
+  "$defs": {
+    "issue": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "issue_id",
+        "variant",
+        "state",
+        "severity",
+        "diff_type",
+        "figma_expected",
+        "runtime_actual",
+        "likely_cause",
+        "required_fix",
+        "auto_fixable",
+        "traceback_layer",
+        "suggested_traceback_action",
+        "requires_human_review"
+      ],
+      "properties": {
+        "issue_id": { "type": "string", "minLength": 1 },
+        "variant": { "type": "string", "minLength": 1 },
+        "state": { "type": "string", "minLength": 1 },
+        "severity": {
+          "type": "string",
+          "enum": ["low", "medium", "high", "blocker"]
+        },
+        "diff_type": {
+          "type": "string",
+          "enum": [
+            "dimension_mismatch",
+            "layout_mismatch",
+            "spacing_mismatch",
+            "typography_mismatch",
+            "color_mismatch",
+            "radius_mismatch",
+            "shadow_mismatch",
+            "icon_mismatch",
+            "image_mismatch",
+            "state_mismatch",
+            "token_mismatch",
+            "unknown"
+          ]
+        },
+        "figma_expected": { "type": "string", "minLength": 1 },
+        "runtime_actual": { "type": "string", "minLength": 1 },
+        "likely_cause": { "type": "string", "minLength": 1 },
+        "required_fix": { "type": "string", "minLength": 1 },
+        "suggested_token": { "type": ["string", "null"] },
+        "auto_fixable": { "type": "boolean" },
+        "traceback_layer": {
+          "type": "string",
+          "enum": [
+            "screen_assembly",
+            "component_implementation",
+            "design_token",
+            "figma_mapping",
+            "rendering_difference",
+            "unknown"
+          ]
+        },
+        "suggested_traceback_action": { "type": "string", "minLength": 1 },
+        "requires_human_review": { "type": "boolean" }
+      }
+    }
+  }
+}
+
